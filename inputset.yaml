@@ -1,0 +1,14 @@
+inputSet:
+  identifier: "default_trigger"
+  name: "default trigger"
+  orgIdentifier: "default"
+  projectIdentifier: "Demo_Sandbox"
+  pipeline:
+    identifier: "dstewartcaac"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "<+trigger.branch>"
