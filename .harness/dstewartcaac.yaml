@@ -21,8 +21,8 @@ pipeline:
           infrastructure:
             type: KubernetesDirect
             spec:
-              connectorRef: account.k8scidemose
-              namespace: default
+              connectorRef: dstewartmacbookinfra
+              namespace: development
               automountServiceAccountToken: true
               nodeSelector: {}
               os: Linux
