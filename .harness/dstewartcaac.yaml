@@ -39,3 +39,4 @@ pipeline:
                     command: |-
                       mvn spring-boot:build-image
                       //update
+                      //second update
