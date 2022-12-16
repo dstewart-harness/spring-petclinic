@@ -106,7 +106,7 @@ class OwnerControllerTests {
 
 	@Test
 	void testProcessCreationFormSuccess() throws Exception {
-		mockMvc.perform(post("/owners/new").param("firstName", "Joe").param("lastName", "Bloggs")
+		mockMvc.perform(post("/owners/new").param("firstName", "Joe").param("lastName", "Stewart")
 				.param("address", "123 Caramel Street").param("city", "London").param("telephone", "01316761638"))
 				.andExpect(status().is3xxRedirection());
 	}
