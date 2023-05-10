@@ -1,0 +1,39 @@
+pipeline:
+  name: Spring Petclinic
+  identifier: Spring_Petclinic
+  projectIdentifier: DavidStewart_Sandbox
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: dstewartharnessgh
+        repoName: spring-petclinic
+        build: <+input>
+  stages:
+    - stage:
+        name: Build PetClinic
+        identifier: Build_PetClinic
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: Colima_K8
+              namespace: build
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: mvn package
+                  identifier: mvn_package
+                  spec:
+                    connectorRef: Unauth_Docker_Hub
+                    image: maven:3.8.7-openjdk-18-slim
+                    shell: Sh
+                    command: "mvn package "
