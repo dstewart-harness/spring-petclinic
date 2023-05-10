@@ -57,5 +57,5 @@ pipeline:
                     bucket: dstewart
                     key: petclinic
                     sourcePaths:
-                      - ~/.m2
+                      - m2/
                     archiveFormat: Tar
