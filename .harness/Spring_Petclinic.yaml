@@ -47,15 +47,3 @@ pipeline:
                     bucket: dstewart
                     sourcePath: target/spring-petclinic-2.7.3.jar
                     target: petclinicjars
-              - step:
-                  type: SaveCacheS3
-                  name: SaveCacheS3_1
-                  identifier: SaveCacheS3_1
-                  spec:
-                    connectorRef: AWS_dstewartharness_private
-                    region: us-east-1
-                    bucket: dstewart
-                    key: cache-{{ checksum "pom.xml" }}
-                    sourcePaths:
-                      - /root/.m2
-                    archiveFormat: Tar
