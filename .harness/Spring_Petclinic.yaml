@@ -36,7 +36,7 @@ pipeline:
                     connectorRef: Unauth_Docker_Hub
                     image: maven:3.8.7-openjdk-18-slim
                     shell: Sh
-                    command: mvn package -DskipTests
+                    command: mvn package -DskipTests -Dmaven.repo.local=/harness/m2
               - step:
                   type: S3Upload
                   name: S3Upload_1
