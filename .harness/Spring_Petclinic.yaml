@@ -57,5 +57,5 @@ pipeline:
                     bucket: dstewart
                     key: petclinic
                     sourcePaths:
-                      - ./maven/repository
+                      - ~/.m2
                     archiveFormat: Tar
