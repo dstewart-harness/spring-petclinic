@@ -55,7 +55,7 @@ pipeline:
                     connectorRef: AWS_dstewartharness_private
                     region: us-east-1
                     bucket: dstewart
-                    key: petclinic
+                    key: cache-{{ checksum "pom.xml" }}
                     sourcePaths:
-                      - m2/
+                      - /root/.m2
                     archiveFormat: Tar
