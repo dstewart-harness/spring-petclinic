@@ -45,7 +45,7 @@ pipeline:
                     connectorRef: AWS_dstewartharness_private
                     region: us-east-1
                     bucket: dstewart
-                    sourcePath: harness/target/spring-petclinic-2.7.3.jar
+                    sourcePath: target/spring-petclinic-2.7.3.jar
                     target: petclinicjars
               - step:
                   type: SaveCacheS3
