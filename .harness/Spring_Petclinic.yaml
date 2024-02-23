@@ -38,7 +38,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       mvn package -DskipTests
-                      echo "Hello"
+                      echo "Hellooo"
               - step:
                   type: S3Upload
                   name: S3Upload_1
