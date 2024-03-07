@@ -12,7 +12,7 @@ pipeline:
         build: <+input>
   stages:
     - stage:
-        name: Build PetClinic
+        name: Build PetClinic- an entirely different pipeline
         identifier: Build_PetClinic
         description: ""
         type: CI
@@ -37,3 +37,6 @@ pipeline:
                     image: maven:3.8.7-openjdk-18-slim
                     shell: Sh
                     command: echo "hello"
+          caching:
+            enabled: false
+            paths: []
