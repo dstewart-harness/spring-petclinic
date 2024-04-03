@@ -21,7 +21,7 @@ pipeline:
           infrastructure:
             type: KubernetesDirect
             spec:
-              connectorRef: Colima_K8
+              connectorRef: Dstewart_Docker_Desktop_K8
               namespace: build
               automountServiceAccountToken: true
               nodeSelector: {}
