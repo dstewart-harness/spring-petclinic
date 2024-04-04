@@ -12,7 +12,7 @@ pipeline:
         build: <+input>
   stages:
     - stage:
-        name: Build PetClinic
+        name: Build PetClinicc
         identifier: Build_PetClinic
         description: ""
         type: CI
