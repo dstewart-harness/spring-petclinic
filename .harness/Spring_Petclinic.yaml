@@ -41,7 +41,7 @@ pipeline:
                       echo "Hellooo"
               - step:
                   type: S3Upload
-                  name: S3Upload_1
+                  name: Upload artifact to S3
                   identifier: S3Upload_1
                   spec:
                     connectorRef: AWS_dstewartharness_private
