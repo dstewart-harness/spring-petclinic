@@ -4,12 +4,6 @@ pipeline:
   projectIdentifier: DavidStewart_Sandbox
   orgIdentifier: default
   tags: {}
-  properties:
-    ci:
-      codebase:
-        connectorRef: dstewartharnessgh
-        repoName: spring-petclinic
-        build: <+input>
   stages:
     - stage:
         name: Build PetClinic
@@ -52,3 +46,9 @@ pipeline:
           caching:
             enabled: false
             paths: []
+  properties:
+    ci:
+      codebase:
+        connectorRef: dstewartharnessgh
+        repoName: petclinic
+        build: <+input>
