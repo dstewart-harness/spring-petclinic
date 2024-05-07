@@ -12,7 +12,7 @@ pipeline:
         build: <+input>
   stages:
     - stage:
-        name: Build PetClinicc
+        name: Build PetClinic
         identifier: Build_PetClinic
         description: ""
         type: CI
@@ -49,3 +49,6 @@ pipeline:
                     bucket: dstewart
                     sourcePath: target/spring-petclinic-2.7.3.jar
                     target: petclinicjars
+          caching:
+            enabled: false
+            paths: []
