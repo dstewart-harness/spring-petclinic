@@ -15,7 +15,7 @@ pipeline:
           infrastructure:
             type: KubernetesDirect
             spec:
-              connectorRef: Dstewart_Docker_Desktop_K8
+              connectorRef: Rancher_Desktop_K8s
               namespace: build
               automountServiceAccountToken: true
               nodeSelector: {}
@@ -43,6 +43,9 @@ pipeline:
                     bucket: dstewart
                     sourcePath: target/spring-petclinic-2.7.3.jar
                     target: petclinicjars
+                  when:
+                    stageStatus: Success
+                    condition: "false"
           caching:
             enabled: false
             paths: []
@@ -52,3 +55,21 @@ pipeline:
         connectorRef: dstewartharnessgh
         repoName: petclinic
         build: <+input>
+  notificationRules:
+    - name: TestNotify
+      identifier: TestNotify
+      pipelineEvents:
+        - type: AllEvents
+      notificationMethod:
+        type: Email
+        spec:
+          userGroups: []
+          recipients:
+            - <+pipeline.variables.emailAddress>
+      enabled: true
+  variables:
+    - name: emailAddress
+      type: String
+      description: ""
+      required: true
+      value: david.stewart@harness.io
