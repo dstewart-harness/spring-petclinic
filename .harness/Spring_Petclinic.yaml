@@ -53,7 +53,7 @@ pipeline:
     ci:
       codebase:
         connectorRef: dstewartharnessgh
-        repoName: petclinic
+        repoName: spring-petclinic
         build: <+input>
   notificationRules:
     - name: TestNotify
