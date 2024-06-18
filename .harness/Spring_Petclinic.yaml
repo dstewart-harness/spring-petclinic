@@ -67,9 +67,3 @@ pipeline:
           recipients:
             - <+pipeline.variables.emailAddress>
       enabled: true
-  variables:
-    - name: emailAddress
-      type: String
-      description: ""
-      required: true
-      value: david.stewart@harness.io
