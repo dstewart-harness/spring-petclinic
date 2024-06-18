@@ -49,6 +49,30 @@ pipeline:
           caching:
             enabled: false
             paths: []
+    - stage:
+        name: Security Scans
+        identifier: Security_Scans
+        description: ""
+        type: SecurityTests
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            useFromStage: Build_PetClinic
+          execution:
+            steps:
+              - step:
+                  type: Owasp
+                  name: Owasp_1
+                  identifier: Owasp_1
+                  spec:
+                    mode: orchestration
+                    config: default
+                    target:
+                      type: repository
+                      detection: auto
+                    advanced:
+                      log:
+                        level: info
   properties:
     ci:
       codebase:
