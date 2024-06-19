@@ -91,3 +91,4 @@ pipeline:
           recipients:
             - <+pipeline.variables.emailAddress>
       enabled: true
+  allowStageExecutions: true
