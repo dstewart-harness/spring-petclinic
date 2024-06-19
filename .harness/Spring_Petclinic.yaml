@@ -57,7 +57,12 @@ pipeline:
         spec:
           cloneCodebase: true
           infrastructure:
-            useFromStage: Build_PetClinic
+            type: KubernetesDirect
+            spec:
+              connectorRef: Rancher_Desktop_K8s
+              namespace: build
+              nodeSelector: {}
+              os: Linux
           execution:
             steps:
               - step:
